@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/main.css') }}">
+    <meta charset="UTF-8">
+    <title>Risultati della ricerca</title>
+</head>
+<body>
+    <!-- Header -->
+    <div  class="header">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <div>
+            <a href="/statistiche">Grafici</a>
+        </div>
+         <!-- Menu a tendina -->
+         <div id="menu">
+            <button class="dropbtn">Filtra</button>
+            <div class="dropdown-content">
+                <a href="/search_variety" style="margin-left: 0px;">Varietà</a>
+                <a href="/search_points" style="margin-left: 0px;">Punti</a>
+                <a href="/search_price" style="margin-left: 0px;">Prezzo</a>
+            </div>
+        </div>
+
+         <!-- Barra di ricerca -->
+        <div id="search">
+            <form action="/search_title" method="get">
+                <input type="text" name="query" placeholder="Cerca un vino...">
+                <button type="submit">Cerca</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- lista dei vini -->
+    <div style="margin-top: 40px;">
+
+         <!-- titolo pagina -->
+        <div>
+        <h1 style="text-align: center;">Risultati della ricerca</h1>
+        </div>
+
+        {% if results %}
+            <ul>
+                {% for result in results %}
+                    <ul>
+                        <!-- box del vino viola -->
+                        <div class="wine-box">
+                            <!--immagine del vino-->
+                            {% if result['img_url'] %}
+                                <img src="{{ result['img_url'] }}" alt="{{ result['name'] }} Image" style="max-width: 200px;">
+                            {% else %}
+                                <p>Immagine non disponibile</p>
+                            {% endif %}
+
+                            
+                        <!--informazioni del vino-->
+
+                        <div class="wine-info"  style="padding: 30px;">
+                            <h2 class="wine-title">{{ result['winery'] }}</h2>
+                            <div class="wine-details">
+                                <div>
+                                    <p><strong>Paese di provenienza:</strong> {{ result['province'] }}</p>
+                                    <p><strong>Varietà:</strong> {{ result['variety'] }}</p>
+                                    <p><strong>Punteggio:</strong> {{ result['points'] }}/100</p>
+                                    <p><strong>Prezzo:</strong> {{ result['price'] }}</p>
+                                </div>
+                            <div>
+                                <h3>Descrizione</h3>
+                                    <p>{{ result['description'] }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nessun risultato trovato</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+/* Stile generale */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+/* Stile dell'header */
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    background-color: #b19cd9;
+    font-size: 28px;
+}
+
+.header a {
+    text-decoration: none;
+    color: white; /* Assicurati che i link siano visibili */
+    margin-left: 80px;
+}
+
+/* Stile della barra di ricerca */
+#search {
+    margin: 20px;
+    text-align: center;
+}
+
+#search form {
+    display: inline-block;
+}
+
+#search input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+}
+
+#search button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search button:hover {
+    background-color: #555;
+}
+
+/* Stili delle query container */
+.query-container {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.query-container a {
+    text-decoration: none;
+    color: #333;
+}
+
+.query-container a:hover {
+    text-decoration: underline;
+}
+
+/*immagine vino*/
+.wine-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+}
+.wine-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-left: 10px; /*messa a sinistra*/
+    margin-right: 10px;
+}
+
+.wine-box {
+    border: 2px solid #7e408b;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px auto; /* Margine in alto e in basso 10px, e automatico a sinistra e a destra */
+    background-color: #bbabd8;
+    max-width: calc(100% - 2cm); /* Larghezza massima è il 100% della pagina meno 2 cm */
+    display: flex; /* Assicura che div sia un blocco */
+    align-items: center; /* Centra verticalmente l'immagine e le informazioni */
+}
+
+/*lista non puntata*/
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.wine-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+h1 {
+    padding-top: 60px; /*faccio in modo che non vad a finire sotto la barra */
+    text-align: center;
+    margin-top: 50px; /* Regola per spostare il titolo più in basso */
+}
+
+.wine-title {
+    text-align: center;
+    margin: 0;
+}
+
+.wine-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.wine-details div {
+    width: 48%;
+}
+
+.wine-details h3 {
+    margin-top: 0;
+}
+
+
+/* Stili per la lista dei risultati */
+.results-list {
+    list-style: none; /* Rimuove i punti elenco della lista */
+    padding: 0; /* Rimuove il padding predefinito della lista */
+}
+
+/* Stili per ogni elemento della lista dei risultati */
+.result-item {
+    margin-bottom: 20px; /* Spazio inferiore tra gli elementi della lista */
+}
+
+/* Stili per la classe content */
+.content {
+    /* Inserisci qui le proprietà CSS che desideri applicare alla classe content */
+    /* Esempio di stili di base */
+    margin: 20px; /* Margine esterno di 20px */
+    padding: 10px; /* Padding interno di 10px */
+    background-color: #f0f0f0; /* Colore di sfondo grigio chiaro */
+    border: 1px solid #ccc; /* Bordo sottile grigio */
+    border-radius: 4px; /* Bordo arrotondato con raggio di 4px */
+}
+
+.wine-list {
+    border: 2px solid #7e408b;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px auto; /* Margine in alto e in basso 10px, e automatico a sinistra e a destra */
+    background-color: #bbabd8;
+    max-width: calc(100% - 2cm); /* Larghezza massima è il 100% della pagina meno 2 cm */
+    display: flex; /* Assicura che div sia un blocco */
+}
+
+.wine-titlelist {
+    text-align: left;
+    margin: 0;
+}
+
+.wine-detailslist {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
+.wine-infolist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+/* menu a tendina style */
+#menu {
+    position: relative;
+    display: inline-block;
+}
+
+#menu button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #722a81;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#menu button:hover {
+    background-color: #c168bb;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #c89cd1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 0px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+#menu:hover .dropdown-content {
+    display: block;
+}
+.graph-container {
+    margin: 20px 0;
+}
+
+.graph-image {
+    max-width: 80%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #fff;
+}

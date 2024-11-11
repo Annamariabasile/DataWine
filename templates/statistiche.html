@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/main.css') }}">
+    <meta charset="UTF-8">
+    <title>DataWine</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <div>
+            <a href="/statistiche">Grafici</a>
+        </div>
+        <div>
+            <a href="/wine_list">Tutti i vini</a>
+        </div>
+
+        <!-- Menu a tendina -->
+        <div id="menu">
+            <button class="dropbtn">Filtra</button>
+            <div class="dropdown-content">
+                <a href="/search_variety" style="margin-left: 0px;">Varietà</a>
+                <a href="/search_points" style="margin-left: 0px;">Punti</a>
+                <a href="/search_price" style="margin-left: 0px;">Prezzo</a>
+            </div>
+        </div>
+
+         <!-- Barra di ricerca -->
+        <div id="search">
+            <form action="/search_title" method="get">
+                <input type="text" name="query" placeholder="Cerca un vino...">
+                <button type="submit">Cerca</button>
+            </form>
+        </div>
+        
+    </div>
+
+
+    <!-- Consigliati -->
+     <!-- Titolo della pagina -->
+     <h1 style="text-align: center; margin-top: 120px;">Alcuni grafici!</h1>
+
+        <!-- Sezione grafici -->
+    <div class="content" style="text-align: center;">
+
+        <div class="graph-container">
+            <h2>Top 10 Varietà più Popolari</h2>
+            <img src="{{ url_for('static', filename='popular_varieties.png') }}" alt="Varietà più Popolari" class="graph-image">
+        </div>
+
+        <div class="graph-container">
+            <h2>Distribuzione dei Punti</h2>
+            <img src="{{ url_for('static', filename='points_distribution.png') }}" alt="Distribuzione dei Punti" class="graph-image">
+        </div>
+
+        <div class="graph-container">
+            <h2>Prezzo vs. Punti</h2>
+            <img src="{{ url_for('static', filename='price_vs_points.png') }}" alt="Prezzo vs. Punti" class="graph-image">
+        </div>
+    </div>
+   
+
+</body>
+</html>
